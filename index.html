@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Bubble Image</title>
+<style>
+    body {
+        background-color: #2e2d2d;
+        position: relative;
+    }
+    #chat-bubble {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 8%;
+        height: auto;
+        transition: transform 0.8s; /* Übergangsdauer und welche Eigenschaft betroffen ist */
+        transition-delay: 0.2s; /* Verzögerung des Übergangs */
+    }
+    #overlay {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: 8%;
+        height: auto;
+        pointer-events: none;
+    }
+    /* Hovern über das Chat-Bubble-Bild */
+    #chat-bubble:hover {
+        transform: scale(1.1); /* Vergrößern beim Hovern */
+    }
+    /* Zurückkehren zur normalen Größe beim Verlassen */
+    #chat-bubble:not(:hover) {
+        transition: transform 0.8s; /* Übergangsdauer für Rückkehr zur normalen Größe */
+    }
+</style>
+</head>
+<body>
+    <!-- Overlay für Hover-Effekt -->
+    <div id="overlay"></div>
+    <!-- Chat-Bubble-Bild -->
+    <img id="chat-bubble" src="chat-bubble.png" alt="Chat Bubble Image" onclick="openChat()">
+    <!-- JavaScript für Chat öffnen -->
+    <script>
+        function openChat() {
+            window.open("chat.html", "_self");
+        }
+    </script>
+</body>
+</html>
